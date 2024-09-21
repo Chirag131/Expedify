@@ -1,0 +1,161 @@
+{% extends "base.html" %} {% block title %}EXPEDIFY - About{% endblock %}
+  
+  
+{% block content %}
+<!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+
+    body {
+      background-image: url('/static/bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    /* Navigation Bar Styles */
+  
+
+    /* Section Styles */
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      min-height: 100vh;
+    }
+
+    .center-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+    }
+
+    #about,
+    #developer {
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #about:hover,
+    #developer:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+
+    #about h2,
+    #developer h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #00ff9d;
+    }
+
+    #about p,
+    #developer p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+
+    /* Developer section styles */
+    #developer {
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+    }
+
+    #developer img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      border: 5px solid #00ff9d;
+    }
+
+    #developer .socials {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    #developer .socials a {
+      color: #00ff9d;
+      font-size: 28px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    #developer .socials a:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      #about,
+      #developer {
+        padding: 20px;
+      }
+    }
+  </style>
+
+
+  <!-- Navigation Bar -->
+
+  
+
+  <!-- About section -->
+  <div class="center-container">
+    <section id="about">
+      <h2>About EXPEDIFY</h2>
+      <p>
+        EXPEDIFY is your ultimate travel companion, designed to help you plan, track, and enhance your travel experiences. With an interactive world map, you can mark your traveled areas, set desired destinations, and earn badges as you explore new places. Whether you're a frequent traveler or an occasional adventurer, EXPEDIFY offers you a personalized and engaging way to manage your journeys.
+      </p>
+    </section>
+  </div>
+
+  <!-- Developer section -->
+  <div class="center-container">
+    <section id="developer">
+      <h2>About the Developer</h2>
+      <img src="/static/developer.jpg" alt="Developer" />
+      <p>
+        Developed by Chirag Tuteja, a passionate developer committed to creating innovative and user-friendly applications. Follow on social media for updates and more projects.
+      </p>
+      <div class="socials">
+        <a href="https://www.instagram.com/chirag_27o4/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/chirag-tuteja-b955a4321/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/Chirag131" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </section>
+  </div>
+
+{% endblock %}

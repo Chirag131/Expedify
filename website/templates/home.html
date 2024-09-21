@@ -1,0 +1,272 @@
+{% extends "base.html" %} {% block title %}EXPEDIFY - Travel Planner{% endblock %}
+
+  
+{% block content %}  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+
+    body {
+      background-image: url('/static/bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; 
+      position: relative;
+    }
+
+ /* Navigation Bar Styles */
+ nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      transition: color 0.3s, transform 0.3s;
+      font-family: 'Roboto', sans-serif; 
+    }
+
+
+    nav ul li a:hover {
+      color: #00ff9d;
+      transform: translateY(-3px);
+    }
+
+    nav ul li a.active {
+      border-bottom: 2px solid #00ff9d;
+    }
+
+  
+    /* Landing Section */
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      transform-style: preserve-3d;
+    }
+
+    .earth {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background-image: url('/static/image.jpg');
+      background-size: cover;
+      background-repeat: repeat-x;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 1), 0 0 50px #4069ff;
+      animation: animateEarth 15s linear infinite;
+    }
+
+    @keyframes animateEarth {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -750px 0;
+      }
+    }
+
+    .circle {
+      transform-style: preserve-3d;
+      animation: animateText 12s linear infinite;
+    }
+
+    .circle span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      color: #35146f;
+      font-size: 2.5em;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      padding: 5px 11px;
+      transform: rotateY(calc(var(--i) * calc(360deg / 39))) translateZ(200px);
+      border-top: 4px solid #35146f;
+      border-bottom: 4px solid #35146f;
+    }
+    .circle span::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #fff;
+        transform: translateZ(-5px);
+      }
+
+    #white {
+      color: #fff;
+    }
+
+    #head {
+      color: #290b5c;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+
+    @keyframes animateText {
+      0% {
+        transform: perspective(1000px) rotateY(360deg) rotateX(15deg) translateY(-30px);
+      }
+      100% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(15deg) translateY(-30px);
+      }
+    }
+
+     /* Home section styles */
+     .section-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+
+     .Welcome {
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .Welcome:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    .Welcome h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .Welcome p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+     /* Responsive design */
+     @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .earth {
+        width: 200px;
+        height: 200px;
+      }
+     }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  
+
+  <!-- Landing section -->
+  <section>
+    <div class="earth"></div>
+    <div class="circle">
+      <span style="--i: 1">P</span>
+      <span style="--i: 2">a</span>
+      <span style="--i: 3">s</span>
+      <span style="--i: 4">s</span>
+      <span style="--i: 5">p</span>
+      <span style="--i: 6">o</span>
+      <span style="--i: 7">r</span>
+      <span style="--i: 8">t</span>
+      <span id = "white" style="--i: 9">_</span>
+      <span style="--i: 10">E</span>
+      <span style="--i: 11">x</span>
+      <span style="--i: 12">p</span>
+      <span style="--i: 13">l</span>
+      <span style="--i: 14">o</span>
+      <span style="--i: 15">r</span>
+      <span style="--i: 16">e</span>
+      <span id="white" style="--i: 17">_</span>
+      <span style="--i: 18">T</span>
+      <span style="--i: 19">r</span>
+      <span style="--i: 20">a</span>
+      <span style="--i: 21">v</span>
+      <span style="--i: 22">e</span>
+      <span style="--i: 23">l</span>
+      <span id="white" style="--i: 24">_</span>
+      <span style="--i: 25">A</span>
+      <span style="--i: 26">d</span>
+      <span style="--i: 27">v</span>
+      <span style="--i: 28">e</span>
+      <span style="--i: 29">n</span>
+      <span style="--i: 30">t</span>
+      <span style="--i: 31">u</span>
+      <span style="--i: 32">r</span>
+      <span style="--i: 33">e</span>
+      <span id="white" style="--i: 34">_</span>
+      <span style="--i: 35">T</span>
+      <span style="--i: 36">r</span>
+      <span style="--i: 37">i</span>
+      <span style="--i: 38">p</span>
+      <span id="white" style="--i: 39">_</span>
+      
+     
+    </div>
+  </section>
+
+  <div class="section-container">
+    <section class="Welcome">
+      <h2>Welcome to EXPEDIFY</h2>
+      <p>
+        EXPEDIFY is designed to enhance your travel experiences with features like interactive maps, badges, and personalized tracking. Explore the world with ease and keep track of your adventures.
+      </p>
+    </section>
+  </div>
+
+{% endblock %}

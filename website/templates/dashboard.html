@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block title %}EXPEDIFY - Dashboard{% endblock %}
+
+
+
+{% block content %} 
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+
+    body {
+      background-image: url('/static/bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+  /* Navigation Bar Styles */
+  nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      transition: color 0.3s, transform 0.3s;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    nav ul li a:hover {
+      color: #00ff9d;
+      transform: translateY(-3px);
+    }
+
+    nav ul li a.active {
+      border-bottom: 2px solid #00ff9d;
+    }
+
+    /* Dashboard content */
+    .dashboard-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .dashboard-content {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .dashboard-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .dashboard-content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .dashboard-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00ff9d;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .dashboard-btn:hover {
+      background-color: #008f63;
+    }
+  </style>
+
+
+
+ 
+
+  <div class="dashboard-container">
+    <div class="dashboard-content">
+      <h1>Welcome to Your Dashboard!</h1>
+      <p>
+        Here you can manage your travel plans, track your progress, and explore new destinations. Start by adding your
+        first trip or view the map to mark your traveled areas.
+      </p>
+      <a href="/coming_soon" class="dashboard-btn">Get Started</a>
+    </div>
+  </div>
+
+{% endblock %}

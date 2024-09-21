@@ -1,0 +1,112 @@
+{% extends "base.html" %} {% block title %}EXPEDIFY - Coming Soon{% endblock %}
+{% block content %}
+<style>
+   body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('/static/bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+  }
+  nav {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          padding: 15px 0;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      nav ul {
+          display: flex;
+          justify-content: center;
+          list-style: none;
+      }
+
+      nav ul li {
+          margin: 0 25px;
+      }
+
+      nav ul li a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          transition: color 0.3s, transform 0.3s;
+      }
+
+      nav ul li a:hover {
+          color: #00ff9d;
+          transform: translateY(-3px);
+      }
+
+      .coming-soon {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          text-align: center;
+          background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+          color: #333;
+          padding: 20px;
+      }
+
+      h1 {
+          font-size: 3.5rem;
+          margin: 20px 0;
+          font-weight: bold;
+      }
+
+      p {
+          font-size: 1.25rem;
+          margin-bottom: 30px;
+          max-width: 600px;
+      }
+
+      .email-signup {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+      }
+
+      .email-signup input {
+          border-radius: 25px 0 0 25px;
+          border: 1px solid #ddd;
+          padding: 10px;
+          outline: none;
+      }
+
+      .email-signup button {
+          border-radius: 0 25px 25px 0;
+          background-color: #00ff9d;
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          transition: background-color 0.3s;
+      }
+
+      .email-signup button:hover {
+          background-color: #00cc7d;
+      }
+</style>
+
+<div class="coming-soon">
+  <h1>Coming Soon!</h1>
+  <p>We’re hard at work on something special. Stay tuned for updates!</p>
+
+  <div class="email-signup">
+    <input
+      type="email"
+      placeholder="Enter your email for updates"
+      aria-label="Email"
+    />
+    <button type="submit">Notify Me!</button>
+  </div>
+</div>
+
+{% endblock %}
