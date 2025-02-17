@@ -56,7 +56,7 @@ Future updates will include social networking capabilities for users to connect,
 Aiming to develop a mobile app version for on-the-go travel planning and access.
 
 ## Public Deployment
-The application is currently deployed and accessible to the public at the following link: [EXPEDIFY Deployment](https://expedify.pythonanywhere.com/)
+The application is currently deployed and accessible to the public at the following link: [EXPEDIFY Deployment](https://chirag131.pythonanywhere.com/)
 
 ### Testing Credentials
 For users who want to test the features without creating an account:
